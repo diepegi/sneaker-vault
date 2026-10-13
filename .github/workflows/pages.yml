@@ -1,0 +1,41 @@
+name: Pubblica Sneaker Vault con GitHub Actions
+
+# Optional alternative to main / (root) publishing. Run manually only after
+# selecting Settings > Pages > Source > GitHub Actions.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Leggi i file del repository
+        uses: actions/checkout@v4
+      - name: Configura GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Prepara soltanto i file pubblici dell'app
+        run: |
+          mkdir -p _site/assets _site/icons
+          cp index.html sw.js manifest.webmanifest vault.enc.json .nojekyll _site/
+          cp assets/app.js assets/app.css assets/storage.js _site/assets/
+          cp icons/icon-192.png icons/icon-512.png icons/apple-touch-icon.png icons/icon.svg _site/icons/
+      - name: Carica il sito statico
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Pubblica su GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

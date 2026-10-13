@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Sneaker Vault">
+  <rect width="512" height="512" fill="#0b1118"/>
+  <rect x="48" y="48" width="416" height="416" rx="94" fill="#122019" stroke="#26362b" stroke-width="2"/>
+  <g fill="none" stroke="#c6eb90" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M230 174H170Q151 174 151 193V223Q151 242 170 242H207Q226 242 226 261V290Q226 309 207 309H143"/>
+    <path d="M278 174L320 309L367 174"/>
+  </g>
+  <path d="M143 356H367" fill="none" stroke="#637b50" stroke-width="5" stroke-linecap="round"/>
+</svg>

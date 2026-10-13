@@ -1,0 +1,36 @@
+# Private access material is distributed separately, never with the website.
+ACCESSO-PRIVATO*
+**/ACCESSO-PRIVATO*
+accesso-privato*
+**/accesso-privato*
+*CHIAVE-PRIVATA*
+*chiave-privata*
+*QR-PRIVATO*
+*qr-privato*
+QR-privato*
+*.key
+*.pem
+.env
+.env.*
+
+# Plaintext vaults, exports and local backups. Keep vault.enc.json in the repo.
+vault.json
+vault.json.*
+*backup*.json
+*backup*.csv
+*backup*.zip
+*backup*.bak
+backup/
+backups/
+private/
+*.bak
+*.zip
+
+# Local tooling and generated output.
+node_modules/
+_site/
+.DS_Store
+Thumbs.db
+*.log
+test-results/
+playwright-report/

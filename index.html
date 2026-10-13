@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b1016">
+  <meta name="description" content="La tua collezione di sneaker, sempre a portata di mano.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data: blob:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Sneaker Vault">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./assets/app.css">
+  <title>Sneaker Vault</title>
+</head>
+<body>
+  <div id="shell" hidden>
+    <header class="app-header">
+      <a class="brand" href="./" aria-label="Sneaker Vault, collezione"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5Z M3 7l9 5 9-5 M12 12v10 M7 4.8l9 5"/></svg><span>Sneaker <em>Vault</em><small>la tua collezione</small></span></a>
+      <div><span id="connection" class="badge" hidden>Offline</span><button class="icon-button primary" data-action="add" aria-label="Aggiungi una sneaker">＋</button></div>
+    </header>
+    <main id="page" class="page" tabindex="-1"></main>
+    <nav class="bottom-nav" aria-label="Navigazione principale" id="navigation"></nav>
+  </div>
+  <section id="gate" class="gate" aria-label="Accesso alla collezione">
+    <div class="gate-card"><span class="eyebrow">Sneaker Vault</span><h1>Il tuo vault.<br>Sempre con te.</h1><p id="startup-message">Apertura della collezione…</p><progress class="progress" aria-label="Apertura"></progress></div>
+  </section>
+  <dialog id="dialog" class="dialog" aria-labelledby="dialog-title"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input id="import-file" type="file" accept="application/json,.json" hidden>
+  <noscript>Attiva JavaScript in Safari per aprire la tua collezione.</noscript>
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>

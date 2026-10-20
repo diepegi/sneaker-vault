@@ -30,6 +30,10 @@ Conserva la chiave privata anche dopo il primo accesso: può servire su un nuovo
 
 ## Archivio, prezzi e backup
 
+Versione 2.0: interfaccia scura ottimizzata per telefono, cursore **Dimensione scarpe** (Compatte, Medie, Grandi) con preferenza ricordata, vista elenco, filtri avanzati, confronto fino a tre modelli, foto ingrandibili e obiettivi di prezzo facoltativi. Il portfolio mostra composizione per brand, costi mancanti e fotografie dello storico aggiungibili su richiesta.
+
+Gli aggiornamenti si controllano da **Il mio vault → Controlla aggiornamenti**. Puoi applicare una versione pronta quando non stai modificando una scheda; altrimenti si attiva chiudendo tutte le finestre dell'app. Archivio locale, foto e backup precedente rimangono conservati.
+
 - **Prezzi:** vedi l'ultima quotazione presente nell'archivio importato, con il collegamento a StockX per consultare il prodotto. La versione web non esegue ricerche automatiche o aggiornamenti dei prezzi in background. La ricerca prezzi dell'app sul PC rimane separata.
 - **Modifiche:** quelle fatte sul telefono restano nel browser o nell'app web di quel dispositivo. Non vengono sincronizzate automaticamente con il PC, GitHub o altri telefoni.
 - **Backup e importazione:** usa il backup completo JSON per conservare tutti i campi, la cronologia e i riferimenti alle immagini, anche quelli non mostrati nelle schede. Il CSV è utile come tabella, ma non sostituisce il backup completo. Importa un backup completo quando vuoi trasferire l'archivio; conserva prima una copia delle modifiche locali.

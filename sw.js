@@ -2,7 +2,7 @@
 
 // Change this version whenever any file in SHELL changes, including vault.enc.json.
 // A replacement worker waits until the open app is closed: no forced reloads.
-const VERSION = '2026-10-13-1';
+const VERSION = '2026-10-20-2';
 const BASE = new URL('./', self.location.href);
 const NAMESPACE = `sneaker-vault:${BASE.pathname}:`;
 const SHELL_CACHE = `${NAMESPACE}shell:${VERSION}`;
@@ -14,6 +14,9 @@ const SHELL = [
   'assets/app.js',
   'assets/app.css',
   'assets/storage.js',
+  'assets/insights.js',
+  'assets/importer.js',
+  'assets/import-worker.js',
   'manifest.webmanifest',
   'icons/icon-192.png',
   'icons/icon-512.png',
@@ -24,6 +27,10 @@ const SHELL = [
 const SHELL_URLS = new Set(SHELL);
 const INDEX_URL = new URL('index.html', BASE).href;
 let imageWrites = Promise.resolve();
+
+self.addEventListener('message', event => {
+  if (event.data?.type === 'ACTIVATE_UPDATE') event.waitUntil(self.skipWaiting());
+});
 
 self.addEventListener('install', event => {
   // addAll commits this batch atomically and rejects non-2xx responses. A failed
